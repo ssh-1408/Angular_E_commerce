@@ -1,0 +1,66 @@
+.home-container {
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.home-hero {
+    height: 400px;
+    background-image: url('https://cdn.pixabay.com/photo/2014/08/24/19/01/apps-426559_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.hero-overlay h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-overlay p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Intro Section */
+.intro-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.intro-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.intro-section li {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}

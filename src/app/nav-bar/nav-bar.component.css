@@ -1,0 +1,62 @@
+.navbar {
+    background-color: #007bff !important; /* SmartPair blue */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+    width: 50px;
+    margin-bottom: 10px;
+    filter: invert(1);
+}
+
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff !important;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Active link styling */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        background-color: #0056b3; /* Darker blue for mobile menu */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+
+    .navbar-collapse {
+        background-color: #007bff; /* Blue background for expanded menu */
+    }
+}
