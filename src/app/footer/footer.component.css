@@ -1,5 +1,5 @@
 .footer {
-    background-color: #007bff;
+    background-color: #EA356C;
     color: white;
     padding: 30px 20px;
     font-family: Arial, sans-serif;
@@ -21,20 +21,20 @@
 }
 
 .footer-logo {
-    width: 120px;
+    width: 60px;
     margin-bottom: 10px;
     filter: invert(1);
 }
 
 .footer-brand p {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.9;
 }
 
 /* Links Section */
 .footer-links h3,
 .footer-social h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 

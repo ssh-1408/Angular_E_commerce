@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #007bff !important; /* SmartPair blue */
+    background-color: #000000 !important; /* SmartPair blue */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -8,7 +8,6 @@
     margin-bottom: 10px;
     filter: invert(1);
 }
-
 
 .navbar-brand {
     font-size: 24px;
@@ -39,14 +38,12 @@
 /* Active link styling */
 .navbar-nav .nav-link.active {
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    color:  #EA356C;
 }
-
 /* Mobile adjustments */
-@media (max-width: 991px) {
+@media (max-width: 425px) {
     .navbar-nav {
-        background-color: #0056b3; /* Darker blue for mobile menu */
+        background-color: #000000; /* Darker blue for mobile menu */
         padding: 10px;
         border-radius: 5px;
     }
@@ -57,6 +54,6 @@
     }
 
     .navbar-collapse {
-        background-color: #007bff; /* Blue background for expanded menu */
+        background-color: #000000; /* Blue background for expanded menu */
     }
 }

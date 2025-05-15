@@ -1,28 +1,68 @@
-
 <div class="container my-4">
-    <h1>Products</h1>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-    
-      @for (product of products; track product.id) {
-      <div class="col">
-        <div class="card mb-4">
-          <img [src]="product.imageUrl"  class="card-img-top" [alt]="product.name" >
-          <div class="card-body">
-            <h5 class="card-title" >{{ product.name }}</h5>
-            <p class="card-text"> Brand: {{ product.brand }}</p>
-            <p class="card-text"> Price: ${{ product.price }}</p>
-            <p class="card-text"> Rating: {{ product.rating }} ★</p>
-            @if (product.availability){
-              <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button >
-              <a [routerLink]="['/details', product.id]" class="btn btn-secondary"> Details</a>
+  <h2>{{productsHeader}}</h2>
+ 
+  <div class="row">
+      <!-- Left Column: Filters -->
+      <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="filter-sidebar p-3 rounded">
+              <h5>Filter by Category</h5>
+              @for (category of categories; track category) {
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" [value]="category" (change)="toggleCategoryFilter(category)">
+                  <label class="form-check-label">{{ category }}</label>
+                </div>
+              }
 
-            }@else {
-              <p>not available</p>
-            }
-            
+              <hr>
+
+              <h5>Filter by Brand</h5>
+              @for (brand of brands; track brand) {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [value]="brand" (change)="toggleBrandFilter(brand)">
+                    <label class="form-check-label">{{ brand }}</label>
+                </div>
+              }
           </div>
-        </div>
       </div>
-      }
-    </div>
-    </div>
+
+      <!-- Right Column: Products Grid -->
+      <div class="col-lg-9 col-md-8 col-sm-12">
+      
+              @for (product of filteredProducts; track product.id) {
+                <div class="card mb-3">
+                  <div class="row g-0 align-items-center">
+                      
+                      <!-- Column 1: Image -->
+                      <div class="col-4 col-md-3">
+                          <img src="{{product.imageUrl}}" class="card-img img-fluid rounded-start" alt="{{ product.name }}">
+                      </div>
+              
+                      <!-- Column 2: Product Info -->
+                      <div class="col-5 col-md-6">
+                          <div class="card-body">
+                              <h5 class="card-title">{{ product.name }}</h5>
+                              <p class="card-text"><strong>Brand:</strong> {{ product.brand }}</p>
+                              <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                              <p class="card-text"><strong>Rating:</strong> {{ product.rating }} ★</p>
+                              @if (!product.availability) {
+                                  <p>Not available</p>
+                              }
+                          </div>
+                      </div>
+              
+                      <!-- Column 3: Buttons -->
+                      <div class="col-3 col-md-3 d-flex flex-column justify-content-center align-items-center gap-2">
+                          @if (product.availability) {
+                              <button class="btn btn-custom w-100" (click)="addToCart(product)">Add to Cart</button>
+                              <a [routerLink]="['/details', product.id]" class="btn btn-custom  w-100">Details</a>
+                          }
+                      </div>
+              
+                  </div>
+              </div>
+              
+              }
+         
+      </div>
+  </div>
+</div>

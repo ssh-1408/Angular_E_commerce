@@ -1,12 +1,16 @@
 @if (product) {
-    <div class="container my-4" >
-    <h1>{{ product.name }}</h1 >
-    <img [src]="product.imageUrl"  [alt]="product.name" class="img-fluid mb-4 w-50" >
-    <p><strong>Brand: </strong> {{ product.brand }}</p>
-    <p><strong>Category:</strong> {{ product.category }}</p>
-    <p><strong>Price:</strong> ${{ product.price }}</p>
-    <p><strong>Rating: </strong> {{ product.rating }} ★</p>
-    <p>{{ product.description }} </p>
-    <button class="btn btn-primary" (click)="addToCart()" >Add to Cart</button >
+    <div class="container my-4">
+        <h1>{{ product.name }}</h1>
+        <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid mb-4 w-50">
+        <p><strong>Brand:</strong> {{ product.brand }}</p>
+        <p><strong>Category:</strong> {{ product.category }}</p>
+        <p><strong>Price:</strong> ${{ product.price }}</p>
+        <p class="rating"><strong>Rating:</strong> {{ product.rating }} ★</p>
+        <p>{{ product.description }}</p>
+
+        <div class="button-group">
+            <button class="btn btn-custom" (click)="addToCart()">Add to Cart</button>
+            <a routerLink="/products" class="btn btn-custom">Return to Products</a>
+        </div>
     </div>
-    }
+}

@@ -3,7 +3,7 @@
     max-width: 1100px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #000000;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@ h1 {
     text-align: center;
     font-size: 28px;
     font-weight: bold;
-    color: #007bff;
+    color: #EA356C;
     margin-bottom: 20px;
 }
 
@@ -25,28 +25,6 @@ h1 {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-}
-
-/* Table head */
-.table thead {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-}
-
-.table th {
-    padding: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-/* Table cells */
-.table td {
-    padding: 12px;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 15px;
 }
 
 /* Product Image */
@@ -69,26 +47,29 @@ input[type="number"] {
 }
 
 /* Remove button */
-.btn-danger {
-    font-size: 13px;
-    padding: 5px 10px;
-}
-
-/* Summary rows */
-.table tbody tr:last-child td {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Summary section (last rows in table) */
-.table tbody tr:last-child {
-    background-color: #f1f1f1;
-}
-
+.btn-custom {
+    background: #000000;
+    color: #ffffff;
+    padding: 0.1rem 0.8rem;
+    border: 1px solid #EA356C;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .btn-custom:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: #000000;
+  }
 /* Italic text for calculated values */
 i {
     font-style: italic;
-    color: #555;
+    color: #555555;
 }
 
 /* Empty cart message */
@@ -96,29 +77,93 @@ i {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: #dc3545;
+    color: #ffffff;
     margin-top: 20px;
 }
 
 /* Optional: Add a little spacing between product rows and summary rows */
 .table tbody tr:nth-last-child(4) {
-    border-top: 2px solid #007bff;
+    border-top: 2px solid #EA356C;
     background-color: #f9f9f9;
 }
 
-/* Responsive: Stack table cells better on smaller screens */
+/* Target summary rows - last 4 rows of the table */
+.table .summary{
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.table .total{
+   
+    padding-left: 20px;
+    font-size: 16px;
+    color: #dc3545;
+}
+
+
+@media (min-width: 769px) { 
+    .table tbody tr:nth-last-child(4) {
+        border-top: 2px solid #EA356C;
+    }
+}
+
 @media (max-width: 768px) {
-    .table th, .table td {
-        font-size: 14px;
-        padding: 8px;
+    .table tbody tr:nth-last-child(4) {
+        border-top: none; /* No extra lines on mobile */
+    }
+    .summary-row, .summary-total-row {
+        padding: 0; /* Tighten up the spacing inside each row */
+        margin: 0; /* Remove any margin */
+        font-size: 12px; /* Optional: slightly smaller font if needed */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cart-table table, 
+    .cart-table thead, 
+    .cart-table tbody, 
+    .cart-table th, 
+    .cart-table td, 
+    .cart-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table thead {
+        display: none; /* Hide table headers */
+    }
+
+    .cart-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border: none;
+    }
+
+    .cart-table td::before {
+        content: attr(data-label); /* Use data-label attribute for field names */
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #EA356C;
     }
 
     .cart-product-image {
         width: 50px;
         height: 50px;
     }
-
-    input[type="number"] {
-        width: 50px;
+    .summary-row, .summary-total-row {
+        padding: 5px 0; /* Tighten up the spacing inside each row */
+        margin: 0; /* Remove any margin */
+        font-size: 14px; /* Optional: slightly smaller font if needed */
     }
 }

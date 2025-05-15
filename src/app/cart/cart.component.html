@@ -1,5 +1,5 @@
 <div class="container my-4">
-  <h1>Your Cart</h1>
+  <h1>Your Cart </h1>
 
   @if(cartItems.length > 0){
       <div class="cart-table">
@@ -16,42 +16,31 @@
               </thead>
               <tbody>
                   @for (item of cartItems; track item.id) {
-                      <tr>
-                          <td><img [src]="item.imageUrl" [alt]="item.name" class="cart-product-image"></td>
-                          <td>{{ item.name }}</td>
-                          <td>€{{ item.price }}</td>
-                          <td>
-                              <input type="number" [value]="item.quantity" min="1" (change)="updateQuantity(item.id, $event)">
-                          </td>
-                          <td>
-                            <button class="btn btn-danger btn-sm" (click)="removeItem(item.id)">Remove</button>
-                          </td>
-                          <td>€{{ (item.price * item.quantity).toFixed(2) }}</td>
-                          
-                      </tr>
-                  }
-                  <tr>
-                    <td></td><td></td><td></td><td></td>
-                    <td><b>Summary:</b></td>
-                    <td><i>€{{ total.toFixed(2) }}</i></td>
+                    <tr>
+                      <td data-label="Image"><img [src]="item.imageUrl" [alt]="item.name" class="cart-product-image"></td>
+                      <td data-label="Product">{{ item.name }}</td>
+                      <td data-label="Price">€{{ item.price }}</td>
+                      <td data-label="Quantity">
+                          <input type="number" [value]="item.quantity" min="1" (change)="updateQuantity(item.id, $event)">
+                      </td>
+                      <td data-label="Action">
+                          <button class="btn btn-custom btn-sm" (click)="removeItem(item.id)">Remove</button>
+                      </td>
+                      <td data-label="Subtotal">€{{ (item.price * item.quantity).toFixed(2) }}</td>
                   </tr>
-                  <tr>
-                    <td></td><td></td><td></td><td></td>
-                    <td><b>Delivery:</b></td>
-                    <td><i>€{{ (total * 0.1).toFixed(2) }}</i></td>
-                  </tr>
-                  <tr>
-                    <td></td><td></td><td></td><td></td>
-                    <td><b>Discount -15%:</b></td>
-                    <td><i>€{{ (calculateDiscount() * total).toFixed(2) }}</i></td>
-                  </tr>
-                  <tr>
-                    <td></td><td></td><td></td><td></td>
-                    <td><b>Total:</b></td>
-                    <td><b><i>€{{ (total * (1 + 0.1 - calculateDiscount())).toFixed(2) }}</i></b></td>
-                  </tr>
-              </tbody>
+                  
+                  }   
+                </tbody>  
+            <p class="summary"><b>Products:</b> <span><i>€{{ total.toFixed(2) }}</i></span> <br>
+                               <b>Delivery:  </b> <span><i>€{{ (total * 0.1).toFixed(2) }}</i></span> <br>
+                               <b>Discount:</b> <span><i>€{{ (calculateDiscount() * total).toFixed(2) }}</i></span> <br>
+            </p>
+            <p class="total"><b>Total: </b> <span ><i>€{{ (total * (1 + 0.1 - calculateDiscount())).toFixed(2) }}</i></span></p>
+                   
           </table>
+          
+            
+      
       </div>
 
      

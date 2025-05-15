@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PRODUCTS } from '../../products';
 import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
