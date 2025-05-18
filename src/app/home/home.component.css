@@ -103,3 +103,43 @@
     color: rgb(0, 0, 0);
     border-color: #000000;
   }
+
+  @media screen and (max-width: 768px) {
+  .home-hero-video {
+    height: 100vh;
+  }
+
+  .hero-text {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .typewriter-title {
+    font-size: 1.8rem;
+    border-right: none;
+    white-space: normal;
+    animation: none;
+  }
+
+  .animated-subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+  }
+
+  .btn-custom {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.1rem;
+  }
+
+  .intro-section {
+    padding: 30px 15px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-section li {
+    font-size: 0.95rem;
+  }
+}

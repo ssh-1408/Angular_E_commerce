@@ -81,4 +81,42 @@ ul {
 }
 
 
+@media screen and (max-width: 768px) {
+  .hero-text {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    width: 90%;
+  }
 
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    padding: 20px 15px;
+  }
+
+  .hero-info {
+    padding: 20px 15px;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+}
